@@ -1,0 +1,44 @@
+.newWorkoutComponent{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.exercises-control{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  button{
+    margin: 0px 10px;
+  }
+}
+
+.exercise{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+
+  .mat-form-field.exercise-name{
+    width: 50%;
+  }
+
+  .mat-form-field.number-of-sets, .mat-form-field.number-of-reps{
+    width: 50px;
+  }
+}
+
+.form-submit-buttons{
+  margin-top: 20px;
+
+  .btn{
+    width: 140px;
+    margin: 0px 10px;
+  }
+}
+
+.loading-div{
+  display: flex;
+  justify-content: center;
+}

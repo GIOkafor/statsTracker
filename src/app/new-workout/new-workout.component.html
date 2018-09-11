@@ -1,0 +1,53 @@
+<div class="newWorkoutComponent">
+  <h4>Create New Workout</h4>
+
+  <form class="workout-form"
+    [formGroup]="workoutForm"
+    (ngSubmit)="submitHandler()">
+    <mat-form-field>
+      <input matInput placeholder="Workout Name" formControlName="workoutName">
+    </mat-form-field>
+
+    <div
+      class="exercise-list"
+      formArrayName="exercises">
+
+        <div class="exercises-control">
+          <h5>Exercises </h5>
+          <button mat-mini-fab type="button" (click)="addExercise()">
+            <mat-icon aria-label="Add a new exercise">add</mat-icon>
+          </button>
+        </div>
+
+        <div class="exercise" *ngFor="let exercise of exercisesForms.controls; let i = index;" [formGroupName]="i">
+
+          <span>{{i + 1}} : </span>
+
+          <mat-form-field class="exercise-name">
+            <input matInput placeholder="Name" formControlName="exerciseName">
+          </mat-form-field>
+
+          <mat-form-field class="number-of-sets">
+            <input matInput placeholder="Sets" type="number" formControlName="numberOfSets">
+          </mat-form-field>
+
+          <mat-form-field class="number-of-reps">
+            <input matInput placeholder="Reps" type="number" formControlName="numberOfReps">
+          </mat-form-field>
+
+          <button mat-icon-button (click)="deleteExercise(i)">
+            <mat-icon aria-label="Remove exercise button">delete</mat-icon>
+          </button>
+        </div>
+    </div>
+
+    <div class="form-submit-buttons" *ngIf="!loading">
+      <button type="submit" class="btn btn-primary" [disabled]="workoutForm.invalid">Create</button>
+      <button type="button" class="btn btn-danger">Cancel</button>
+    </div>
+
+    <div class="loading-div" *ngIf="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+  </form>
+</div>

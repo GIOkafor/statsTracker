@@ -1,0 +1,48 @@
+<div class="container authComponent">
+  <nav class="nav">
+    <a class="nav-link" [ngClass]="{'active': authMode === 'login' }" (click)="authMode = 'login'">Login</a>
+    <a class="nav-link" [ngClass]="{'active': authMode === 'signUp' }" (click)="authMode = 'signUp'">Signup</a>
+  </nav>
+
+  <form
+    #loginForm="ngForm"
+    class="loginForm"
+    method="post"
+    *ngIf="authMode == 'login'">
+    <h3>Login</h3>
+
+    <div class="form-group">
+      <input type="text" name="email" placeholder="Email" value="" ngModel>
+    </div>
+
+    <div class="form-group">
+      <input type="password" name="password" placeholder="password" value="" ngModel>
+    </div>
+
+    <button type="button" class="btn btn-primary" name="button" (click)="emailLogin(loginForm.value)">Login</button>
+  </form>
+
+  <form
+    #signUpForm="ngForm"
+    class="signupForm"
+    method="post"
+    *ngIf="authMode == 'signUp'">
+    <h3>Sign up</h3>
+
+    <div class="form-group">
+      <input type="text" name="email" value="" placeholder="Email address" ngModel>
+    </div>
+
+    <div class="form-group">
+      <input type="password" name="password" placeholder="Password" value="" ngModel>
+    </div>
+
+    <div class="form-group">
+      <input type="password" name="password2" placeholder="Retype password" value="">
+    </div>
+
+    <p>By signing up, you agree to our terms of service and privacy policy</p>
+
+    <button type="button" class="btn btn-primary" name="button" (click)="emailSignUp(signUpForm.value)">Create Account</button>
+  </form>
+</div>

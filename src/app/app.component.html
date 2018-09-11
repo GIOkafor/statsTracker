@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">TrackerApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <a class="nav-link" routerLink="auth" routerLinkActive="active">Login/SignUp</a>
+      </li>
+
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <a class="nav-link" routerLink="track/track-workout" routerLinkActive="active">Track Workout</a>
+      </li>
+
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <a class="nav-link" routerLink="track/track-food" routerLinkActive="active">Track Food</a>
+      </li>
+
+      <li class="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <a class="nav-link" (click)="signOut();">Sign Out</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

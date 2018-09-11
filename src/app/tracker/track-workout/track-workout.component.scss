@@ -1,0 +1,16 @@
+.list-group label{
+  font-weight: 500;
+  font-size: 20px;
+}
+.list-group.workouts{
+  padding: 10px;
+}
+
+.new-workout{
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+}
+.new-workout-button{
+  margin-left: 10px;
+}

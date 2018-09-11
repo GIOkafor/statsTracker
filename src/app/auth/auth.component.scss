@@ -1,0 +1,18 @@
+.authComponent nav{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.nav-link{
+  cursor: pointer;
+}
+
+.nav-link.active{
+  font-weight: 500;
+  border: 1px solid #ccc;
+}
+
+form{
+  text-align: center;
+}
